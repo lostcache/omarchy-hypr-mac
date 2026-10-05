@@ -20,11 +20,11 @@ local omarchy_builtin_monitor = "eDP-1"
 -- External TV at native scale: the generic rule above would apply the laptop
 -- scale (1.6/1.25) to it, which is far too zoomed on a 1360x768 display.
 hl.monitor({ output = omarchy_external_monitor, mode = "preferred", position = "auto", scale = 0.75 })
-for id = 1, 5 do
-  hl.workspace_rule({ workspace = tostring(id), monitor = omarchy_external_monitor, default = true })
+for id = 1, 6 do
+	hl.workspace_rule({ workspace = tostring(id), monitor = omarchy_external_monitor, default = true })
 end
-for id = 6, 10 do
-  hl.workspace_rule({ workspace = tostring(id), monitor = omarchy_builtin_monitor, default = true })
+for id = 7, 10 do
+	hl.workspace_rule({ workspace = tostring(id), monitor = omarchy_builtin_monitor, default = true })
 end
 
 -- GDK scale is GDK_SCALE, the factor GTK draws its own UI at. It's what

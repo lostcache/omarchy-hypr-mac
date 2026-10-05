@@ -42,3 +42,11 @@ o.bind("SUPER + L", "Focus next window", hl.dsp.window.cycle_next())
 -- o.bind("SUPER + SHIFT + S", nil, "omarchy-capture-screenshot")
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
+
+-- Brightness keys (keyboard knob on Fn1): always drive the built-in panel.
+-- The external Sceptre is behind DisplayLink, so DDC/CI can't work for it and
+-- the default "focused display" binding silently fails whenever it's focused.
+hl.unbind("XF86MonBrightnessUp")
+hl.unbind("XF86MonBrightnessDown")
+o.bind("XF86MonBrightnessUp", "Brightness up", "omarchy-brightness-display --monitor eDP-1 +5%", { locked = true, repeating = true })
+o.bind("XF86MonBrightnessDown", "Brightness down", "omarchy-brightness-display --monitor eDP-1 5%-", { locked = true, repeating = true })

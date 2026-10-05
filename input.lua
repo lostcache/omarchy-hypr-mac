@@ -29,9 +29,18 @@
 
 -- hl.config({
 -- 	input = {
--- 		kb_options = "compose:caps,shift:both_capslock_cancel,altwin:swap_lalt_lwin",
+-- 		-- Swap Option (Alt) and Command (Super) for a macOS-style layout.
+-- 		-- Remove altwin:swap_alt_win to go back to the normal key order.
+-- 		kb_options = "altwin:swap_alt_win",
 -- 	},
 -- })
+
+-- Make Caps Lock a normal Caps Lock (Omarchy defaults it to Compose).
+hl.config({
+	input = {
+		kb_options = "",
+	},
+})
 
 hl.config({
 	input = {
